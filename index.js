@@ -13,11 +13,7 @@ const dbport=process.env.DB_PORT;
 
 function createClient(){
 return new pg.Client({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    port: dbport,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DB
+    connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 });
 }
 
